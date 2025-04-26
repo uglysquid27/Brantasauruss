@@ -8,9 +8,9 @@
 
         <!-- Center Links -->
         <div class="flex space-x-12">
-            <a href="#" class="text-gray-700 hover:text-black font-bold text-lg" style="font-family: 'Poppins', sans-serif;">About</a>
-            <a href="#" class="text-gray-700 hover:text-black font-bold text-lg" style="font-family: 'Poppins', sans-serif;">Why</a>
-            <a href="#" class="text-gray-700 hover:text-black font-bold text-lg" style="font-family: 'Poppins', sans-serif;">How</a>
+            <a href="#about" class="text-gray-700 hover:text-black font-bold text-lg" style="font-family: 'Poppins', sans-serif;">About</a>
+            <a href="#why" class="text-gray-700 hover:text-black font-bold text-lg" style="font-family: 'Poppins', sans-serif;">Why</a>
+            <a href="#how" class="text-gray-700 hover:text-black font-bold text-lg" style="font-family: 'Poppins', sans-serif;">How</a>
         </div>
 
         <!-- Button -->
@@ -22,3 +22,19 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
