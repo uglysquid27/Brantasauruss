@@ -4,6 +4,7 @@ use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HakCiptaController;
 use App\Http\Controllers\PatenController;
+use App\Http\Controllers\ScreeningController;
 
 
 
@@ -11,6 +12,11 @@ Route::get('/', function () {
     return view('search'); 
 });
 
+
+// Route for the question page
+Route::get('/question', [ScreeningController::class, 'index']);
+// Route for storing screening data
+Route::post('/screening/store', [ScreeningController::class, 'store'])->name('screening.store');
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 Route::get('/hak-cipta/{ki_id}', [HakCiptaController::class, 'show'])->name('hak_cipta.detail');

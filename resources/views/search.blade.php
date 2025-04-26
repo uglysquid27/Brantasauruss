@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Search')
+@section('title', 'Main Page')
 
 @section('content')
 <section id="hero" class="hero bg-white min-h-screen border-b-4 border-black">
@@ -27,9 +27,9 @@
             </p>
             <div class="flex space-x-4">
                 <div class="relative group">
-                    <button class="bg-[#a0f0c5] text-black font-bold py-4 px-8 border-2 border-black relative z-10">
+                    <a href="/question" class="bg-[#a0f0c5] text-black font-bold py-4 px-8 border-2 border-black relative z-10 inline-block text-center">
                         Start Screening
-                    </button>
+                    </a>
                     <div class="absolute top-2 left-2 bg-black w-full h-full z-0 transition-all duration-300 group-hover:top-0 group-hover:left-0"></div>
                 </div>
                 <div class="relative group">
