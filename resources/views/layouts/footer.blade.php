@@ -1,14 +1,14 @@
 <footer class="bg-gray-100">
     <!-- Disclaimer Section -->
-    {{-- <div class="px-10 py-4 text-xs text-center bg-[#051D47] text-white italic">
+    {{-- <div class="px-10 py-4 text-xs text-center bg-black text-white italic">
         Disclaimer: Politeknik Negeri Malang Intelektual tidak menjamin keakuratan informasi yang terdapat dalam Pangkalan Data Kekayaan Intelektual ini. Pembaharuan, Koreksi, atau perubahan terkini mungkin tidak disertakan. Disarankan untuk berkonsultasi dengan Konsultan kekayaan Intelektual terdaftar jika diperlukan pencarian menyeluruh terhadap merek atau interpretasi hasil pencarian. Pangkalan Data Kekayaan Intelektual ini hanya untuk tujuan informasi saja. Keputusan tidak boleh dibuat berdasarkan pencarian ini saja.
     </div> --}}
 
     <!-- Footer Content -->
-    <div class="w-full px-10 md:px-6 py-6 grid md:grid-cols-3 gap-10 bg-[#051D47]">
+    <div class="w-full px-10 md:px-6 py-6 grid md:grid-cols-3 gap-10 bg-black">
         <!-- Left Section -->
         <div class="grid gap-6">
-            <img src="{{ asset('img/polinema-footer.png') }}" alt="Polinema Footer Logo" class="h-16 w-auto">
+            <img src="{{ asset('img/brantaLogo.png') }}" alt="Polinema Footer Logo" class="h-16 w-auto scale-500 pl-10">
             <font size="-2">
                 <b>BLU POLITEKNIK NEGERI MALANG</b> <br>
                 - Soekarno Hatta Street No.9 Malang 65141 <br>
@@ -84,7 +84,7 @@
     </div>
 
     <!-- Copyright -->
-    <div class="text-center py-6 px-10 border-t text-sm font-light bg-[#051D47]">
+    <div class="text-center py-6 px-10 border-t text-sm font-light bg-black">
         Copyright © {{ date('Y') }} Politeknik Negeri Malang. All rights reserved.
     </div>
 </footer>
