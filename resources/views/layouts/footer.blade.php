@@ -10,11 +10,10 @@
         <div class="grid gap-6">
             <img src="{{ asset('img/brantaLogo.png') }}" alt="Polinema Footer Logo" class="h-16 w-auto scale-500 pl-10">
             <font size="-2">
-                <b>BLU POLITEKNIK NEGERI MALANG</b> <br>
-                - Soekarno Hatta Street No.9 Malang 65141 <br>
-                &nbsp; Jatimulyo, Kec. Lowokwaru, Malang, <br>
+                <b>DINAS KESEHATAN KABUPATEN PASURUAN</b> <br>
+                - Jl. Raya Raci km. 15, Jati,  <br>
+                &nbsp; Masangan, Kec. Bangil, Pasuruan,  <br>
                 &nbsp; East Java - Indonesia<br>
-                - PMDN
             </font>
         </div>
 
@@ -24,7 +23,7 @@
                 <div data-orientation="horizontal" role="none" class="shrink-0 bg-gray-300 h-[2px] w-full"></div>
                 <div data-orientation="horizontal" role="none" class="shrink-0 bg-gray-300 h-[3px] w-1/3"></div>
             </div>
-            <a href="https://www.instagram.com/polinema_campus/" target="_blank">
+            <a href="https://www.instagram.com/promkeskab.pasuruan/" target="_blank">
                 <div class="grid gap-1 cursor-pointer">
                     <h1 class="font-semibold hover:text-blue-500 flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-brand-instagram">
@@ -34,10 +33,10 @@
                         </svg>
                         Instagram
                     </h1>
-                    <p class="text-xs">@polinema_campus</p>
+                    <p class="text-xs">@promkeskab.pasuruan</p>
                 </div>
             </a>
-            <a href="https://www.facebook.com/polinema" target="_blank">
+            <a href="https://www.facebook.com/people/Promkes-Kabupaten-Pasuruan/100046895376621/" target="_blank">
                 <div class="grid gap-1 cursor-pointer">
                     <h1 class="font-semibold hover:text-blue-500 flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-brand-facebook">
@@ -45,10 +44,10 @@
                         </svg>
                         Facebook
                     </h1>
-                    <p class="text-xs">@Politeknik Negeri Malang</p>
+                    <p class="text-xs">@Promkes Kabupaten Pasuruan</p>
                 </div>
             </a>
-            <a href="https://x.com/polinema_campus" target="_blank">
+            <a href="https://x.com/pemkabpasuruan_" target="_blank">
                 <div class="grid gap-1 cursor-pointer">
                     <h1 class="font-semibold hover:text-blue-500 flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-brand-twitter">
@@ -57,7 +56,7 @@
                         </svg>
                         Twitter
                     </h1>
-                    <p class="text-xs">@polinema_campus</p>
+                    <p class="text-xs">@pemkabpasuruan_</p>
                 </div>
             </a>
         </div>
@@ -68,7 +67,7 @@
                 <div data-orientation="horizontal" role="none" class="shrink-0 bg-gray-300 h-[2px] w-full"></div>
                 <div data-orientation="horizontal" role="none" class="shrink-0 bg-gray-300 h-[3px] w-1/3 mb-5"></div>
             </div>
-            <a href="https://www.polinema.ac.id/?fbclid=PAZXh0bgNhZW0CMTEAAabaYM2aXTfhNovgiKni8drcdp5zUQh9j17EZFPhOfxlNutw3KbSvLMk1Bc_aem_ENfZB3WxC_jMVWl9LyAEHw" target="_blank">
+            <a href="https://dinkes.pasuruankab.go.id" target="_blank">
                 <div class="grid gap-1 cursor-pointer">
                     <h1 class="font-semibold hover:text-blue-500 flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-link">
@@ -76,7 +75,7 @@
                             <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"></path>
                             <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"></path>
                         </svg>
-                        Portal Polinema
+                        Portal Dinkes Kab. Pasuruan
                     </h1>
                 </div>
             </a>
@@ -85,6 +84,6 @@
 
     <!-- Copyright -->
     <div class="text-center py-6 px-10 border-t text-sm font-light bg-black">
-        Copyright © {{ date('Y') }} Politeknik Negeri Malang. All rights reserved.
+        Copyright © {{ date('Y') }} Dinas Kesehatan Kabupaten Pasuruan. All rights reserved.
     </div>
 </footer>

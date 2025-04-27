@@ -5,20 +5,19 @@
 @section('content')
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Form logic
         const screeningForm = document.getElementById("screeningForm");
         const personalInfoSection = document.getElementById("personalInfoSection");
         const screeningFormSection = document.getElementById("screeningFormSection");
         const nextButton = document.getElementById("nextButton");
         const prevButton = document.getElementById("prevButton");
 
-        // Handle next button
+        // Next button: Show Screening Form
         nextButton.addEventListener("click", function() {
             personalInfoSection.style.display = "none";
             screeningFormSection.style.display = "block";
         });
 
-        // Handle prev button
+        // Prev button: Go back to Personal Information
         if (prevButton) {
             prevButton.addEventListener("click", function() {
                 screeningFormSection.style.display = "none";
@@ -43,12 +42,29 @@
     });
 </script>
 
+<!-- Modal if needed -->
+<div class="modal fade" id="tbIndicationModal" tabindex="-1" aria-labelledby="tbIndicationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-white p-5 rounded-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tbIndicationModalLabel">Warning</h5>
+      </div>
+      <div class="modal-body">
+        You show multiple TB symptoms. Please consult a doctor immediately.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-<section class="bg-white min-h-screen flex items-center justify-center p-8" style="font-family: 'Poppins', sans-serif;">
+<section class="bg-white min-h-screen flex items-center justify-center p-8 pt-30" style="font-family: 'Poppins', sans-serif;">
     <div class="w-full max-w-4xl bg-[#f7c1d9] p-10 rounded-lg shadow-lg border-4 border-black">
         <form action="/screening" method="POST" enctype="multipart/form-data" id="screeningForm" class="space-y-6">
             {{ csrf_field() }}
-            
+
+            <!-- Personal Information Section -->
             <div id="personalInfoSection">
                 <h2 class="text-3xl font-bold text-center text-black mb-6">Personal Information</h2>
 
@@ -99,194 +115,52 @@
                 </div>
             </div>
 
-            <div class="row d-flex justify-content-center align-items-center">
-                <div class="section" id="screeningFormSection">
-                    <div class="card">
-                        <div class="card-body">
-                            <h6>Screening Form</h6>
-                            <div class="card-body">
-                                <p class="text-uppercase text-sm text-center">Gejala Utama</p>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group text-center">
-                                            <label for="example-text-input" class="form-control-label">Batuk (Semua batuk tanpa melihat durasi)</label>
-                                            <div class="col-sm-12">
-                                                <div class="row">
-                                                    <div class="col-md-5">
-                                                        <input type="radio" name="batuk" value="ya"> Ya
-                                                    </div>
-                                                    <div class="col-md-2"></div>
-                                                    <div class="col-md-5">
-                                                        <input type="radio" name="batuk" value="Tidak"> Tidak
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-            
-                                <p class="text-uppercase text-sm text-center">Gejala Tambahan</p>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group text-center">
-                                            <label for="example-text-input" class="form-control-label">BB Turun tanpa penyebab jelas/BB tidak naik/nafsu makan turun</label>
-                                            <div class="col-sm-12">
-                                                <div class="row">
-                                                    <div class="col-md-5">
-                                                        <input type="radio" name="bb" value="ya"> Ya
-                                                    </div>
-                                                    <div class="col-md-2"></div>
-                                                    <div class="col-md-5">
-                                                        <input type="radio" name="bb" value="Tidak"> Tidak
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-            
-                                    <div class="col-md-12">
-                                        <div class="form-group text-center">
-                                            <label for="example-text-input" class="form-control-label">Demam yang tidak diketahui penyebabnya</label>
-                                            <div class="col-sm-12">
-                                                <div class="row">
-                                                    <div class="col-md-5">
-                                                        <input type="radio" name="demam" value="ya"> Ya
-                                                    </div>
-                                                    <div class="col-md-2"></div>
-                                                    <div class="col-md-5">
-                                                        <input type="radio" name="demam" value="Tidak"> Tidak
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-            
-                                    <div class="col-md-12">
-                                        <div class="form-group text-center">
-                                            <label for="example-text-input" class="form-control-label">Badan lemas/lesu</label>
-                                            <div class="col-sm-12">
-                                                <div class="row">
-                                                    <div class="col-md-5">
-                                                        <input type="radio" name="lemas" value="ya"> Ya
-                                                    </div>
-                                                    <div class="col-md-2"></div>
-                                                    <div class="col-md-5">
-                                                        <input type="radio" name="lemas" value="Tidak"> Tidak
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-            
-                                    <div class="col-md-12">
-                                        <div class="form-group text-center">
-                                            <label for="example-text-input" class="form-control-label">Berkeringat malam hari tanpa kegiatan</label>
-                                            <div class="col-sm-12">
-                                                <div class="row">
-                                                    <div class="col-md-5">
-                                                        <input type="radio" name="keringat" value="ya"> Ya
-                                                    </div>
-                                                    <div class="col-md-2"></div>
-                                                    <div class="col-md-5">
-                                                        <input type="radio" name="keringat" value="Tidak"> Tidak
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-            
-                                    <div class="col-md-12">
-                                        <div class="form-group text-center">
-                                            <label for="example-text-input" class="form-control-label">Sesak napas tanpa nyeri dada</label>
-                                            <div class="col-sm-12">
-                                                <div class="row">
-                                                    <div class="col-md-5">
-                                                        <input type="radio" name="sesak" value="ya"> Ya
-                                                    </div>
-                                                    <div class="col-md-2"></div>
-                                                    <div class="col-md-5">
-                                                        <input type="radio" name="sesak" value="Tidak"> Tidak
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-            
-                                    <div class="col-md-12">
-                                        <div class="form-group text-center">
-                                            <label for="example-text-input" class="form-control-label">Ada pembesaran getah bening di leher atau ketiak</label>
-                                            <div class="col-sm-12">
-                                                <div class="row">
-                                                    <div class="col-md-5">
-                                                        <input type="radio" name="getah" value="ya"> Ya
-                                                    </div>
-                                                    <div class="col-md-2"></div>
-                                                    <div class="col-md-5">
-                                                        <input type="radio" name="getah" value="Tidak"> Tidak
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-            
-                                    <div class="col-md-12">
-                                        <div class="form-group text-center">
-                                            <label for="example-text-input" class="form-control-label">Apakah pernah berkontakan dengan seseorang yang terjangkit?</label>
-                                            <div class="col-sm-12">
-                                                <div class="row">
-                                                    <div class="col-md-5">
-                                                        <input type="radio" name="jangkit" value="ya"> Ya
-                                                    </div>
-                                                    <div class="col-md-2"></div>
-                                                    <div class="col-md-5">
-                                                        <input type="radio" name="jangkit" value="Tidak"> Tidak
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-            
-                                    <div class="col-md-12">
-                                        <div class="form-group text-center">
-                                            <label for="example-text-input" class="form-control-label">Lainnya</label>
-                                            <div class="col-md-12 d-flex justify-content-center">
-                                                <input class="form-control mx-auto" type="text" name="lainnya">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-            
-                                <!-- Buttons -->
-                                <div class="col-md-12 d-flex justify-content-center mt-4">
-                                    <button type="button" class="btn btn-info mx-2 rounded-lg" id="prevButton">Previous</button>
-                                    <button type="button" class="btn btn-primary mx-2 rounded-lg" id="nextButton">Next</button>
-                                </div>
-            
+            <!-- Screening Form Section -->
+            <div id="screeningFormSection" style="display: none;">
+                <h2 class="text-3xl font-bold text-center text-black mb-6 pt-10">Screening Form</h2>
+
+                <div class="space-y-6">
+                    @php
+                        $questions = [
+                            'batuk' => 'Batuk (Semua batuk tanpa melihat durasi)',
+                            'bb' => 'BB Turun tanpa penyebab jelas/BB tidak naik/nafsu makan turun',
+                            'demam' => 'Demam yang tidak diketahui penyebabnya',
+                            'lemas' => 'Badan lemas/lesu',
+                            'keringat' => 'Berkeringat malam hari tanpa kegiatan',
+                            'sesak' => 'Sesak napas tanpa nyeri dada',
+                            'getah' => 'Ada pembesaran getah bening di leher atau ketiak',
+                            'jangkit' => 'Apakah pernah berkontakan dengan seseorang yang terjangkit?',
+                        ];
+                    @endphp
+
+                    @foreach ($questions as $name => $label)
+                        <div class="text-center">
+                            <label class="block text-black mb-2">{{ $label }}</label>
+                            <div class="flex justify-center space-x-6">
+                                <label class="flex items-center">
+                                    <input type="radio" name="{{ $name }}" value="ya" required class="mr-2"> Ya
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="{{ $name }}" value="tidak" required class="mr-2"> Tidak
+                                </label>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
+                </div>
+
+                <div class="flex justify-between mt-8">
+                    <button type="button" id="prevButton" class="bg-gray-300 text-black font-bold py-3 px-8 border-2 border-black rounded-lg hover:bg-gray-400">
+                        Previous
+                    </button>
+
+                    <button type="submit" class="bg-green-400 text-black font-bold py-3 px-8 border-2 border-black rounded-lg hover:bg-green-500">
+                        Submit
+                    </button>
                 </div>
             </div>
-            
+
         </form>
     </div>
 </section>
 
-<!-- Modal -->
-<div class="modal fade" id="tbIndicationModal" tabindex="-1" aria-labelledby="tbIndicationModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content border-2 border-black">
-            <div class="modal-header bg-[#f7c1d9]">
-                <h5 class="modal-title text-black">Indikasi Tuberculosis</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
-            </div>
-            <div class="modal-body text-black">
-                Berdasarkan jawaban Anda, terdapat indikasi Tuberculosis. Segera konsultasikan ke tenaga medis untuk pemeriksaan lebih lanjut.
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn bg-black text-white" data-bs-dismiss="modal">Tutup</button>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection
