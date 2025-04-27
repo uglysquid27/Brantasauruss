@@ -10,19 +10,10 @@ class Screening extends Model
     use HasFactory;
 
     protected $fillable = [
-        'namaLengkap',
-        'alamat',
-        'phone',
-        'nik',
-        'work',
-        'born',
-        'gender',
+        'namaLengkap', 'alamat', 'phone', 'nik', 'work', 'born', 'gender'
     ];
 
-    /**
-     * Get the symptoms associated with the screening.
-     */
-    public function symptoms()
+    public function screeningSymptoms()
     {
         return $this->hasOne(ScreeningSymptom::class);
     }
